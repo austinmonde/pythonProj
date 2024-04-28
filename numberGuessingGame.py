@@ -40,3 +40,5 @@ while True: #the code will keep running unless it is false
         print("You were below the number!")
 
 print("You got it in ", guesses, "guesses.")
+# Prompt the user to press Enter to exit
+input("Press Enter to exit...")
