@@ -15,4 +15,4 @@ while True:
 
     random_number = random.randint(0, 2) # 0: Rock, 1: Paper, 2: Scissors
     
-Print("Gooodbye!")
+print("Gooodbye!")
