@@ -9,3 +9,7 @@ elif answer == "right":
 
 else:
     print('Not a valid option. You lose.')
+
+
+
+input("Press Enter to exit...")
