@@ -14,5 +14,27 @@ while True:
         continue # the while loop will restart when the user does not enter anything in list
 
     random_number = random.randint(0, 2) # 0: Rock, 1: Paper, 2: Scissors
-    
+    computer_pick = options[random_number] #computer will pick from the index random numbers
+
+    print("computer picked", computer_pick + ".")
+
+    if user_input == "rock" and computer_pick == "scissors":
+        print("You won!")
+        user_wins =+ 1
+        
+    elif user_input == "rock" and computer_pick == "scissors":
+        print("You won!")
+        user_wins =+ 1
+        
+    elif user_input == "rock" and computer_pick == "scissors":
+        print("You won!")
+        user_wins =+ 1
+    else:
+        print("You lost!")
+        computer_wins =+ 1
+
+print("You won", user_wins, "times.")
+print("Computer won", computer_wins, "times.")
+
 print("Gooodbye!")
+input("Press Enter to exit...")
