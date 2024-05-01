@@ -27,7 +27,7 @@ while True: #the code will keep running unless it is false
 
     else:
         print("Please enter a number next time")
-        continue #this will continue restart the while loop till user types a number.
+        continue #this will restart the while loop till user types a number.
     
     if user_guess == random_number: 
         print("You got it correct!") # this line will not be printed unless user gets the guess correct.
@@ -35,7 +35,7 @@ while True: #the code will keep running unless it is false
 
     ##elif will help by checking another condition if the initial condition is not true.
     elif user_guess > random_number: #This will help the user narrow down their guess.
-            print("You we're above the number!")
+        print("You we're above the number!")
     else:
         print("You were below the number!")
 
