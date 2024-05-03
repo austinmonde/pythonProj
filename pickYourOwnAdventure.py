@@ -10,8 +10,9 @@ while True:
             if answer == "swim":
                 print("You swam across and got eaten by an alligator. you lost the game.")
                 quit()
+                input("...............")
             elif answer == "walk":
-                print("You walk around for many miles, ran out of water and lost the game ")
+                print("You walked for many miles, ran out of water and lost the game ")
                 quit()
             else:
                 print('Not a valid option. You lose.')
