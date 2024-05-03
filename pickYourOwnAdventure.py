@@ -9,7 +9,6 @@ while True:
             answer = input("You come to a river, you can walk around it or swim across it, swim/walk: ").lower()
             if answer == "swim":
                 print("You swam across and got eaten by an alligator. you lost the game.")
-                input("Press Enter to exit...")
                 quit()
 
             elif answer == "walk":
