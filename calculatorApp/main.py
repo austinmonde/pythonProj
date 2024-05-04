@@ -30,7 +30,7 @@ class MainApp(App):
                     text = label, font_size=30, background_color = "grey",
                     pos_hint={"center_x":0.5, "center_y":0.5}
                 )
-                button.bind(on.press=self.on_button_press)
+                button.bind(on_press=self.on_button_press)
                 h_layout.add_widget(button)
             main_layout.add_widget(h_layout)
 
