@@ -1,6 +1,23 @@
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet #for password encryption
 
-pwd = input("What is the master password?: ")
+'''
+#this function is used to generate an encrypted key
+def write_key():
+    key = Fernet.generate_key()
+    with open("key.key", "wb") as key_file:
+        key_file.write(key)'''
+
+def load_key():
+    file = open("key.key", "rb")
+    key = file.read()
+    file.close()
+    return key
+
+master_pwd = input("What is the master password?: ")
+
+key = load_key() + master_pwd.encode()
+fer = Fernet(key)
+
 
 #the with key word (with) automatically closes the file after use.
 #the second parameter is the mode for opening the file: 
@@ -12,7 +29,7 @@ def view():
         for line in f.readlines():
             data = line.strip()
             user, passw = data.split("|")
-            print("User:", user, "| password:", passw)
+            print("User:", user, "| password:", fer.decrypt(passw.encode()).decode())
 
 
 #this function will create and add a new password into the file
@@ -21,7 +38,7 @@ def add():
     pwd = input('Password: ')
 
     with open('password.txt', 'a') as f: #f is the name of the file
-        f.write(name + "|" + pwd + "\n")
+        f.write(name + "|" + fer.encrypt(pwd.encode()).decode() + "\n")
 
 while True:
     mode = input("Would you like to enter a new password or view existing ones(view / add), press q to quit: ").lower()
