@@ -13,7 +13,8 @@ class MainApp(App):
         self.last_button = None
         
         main_layout = BoxLayout(orientation = 'vertical')
-        self.solution = TextInput(background_color = "black", foreground_color = "white")
+        self.solution = TextInput(background_color = "black", foreground_color = "white", 
+                                  multiline = False, halign = "right", font_size = "55", readonly = True)
 
         main_layout.add_widget(self.solution)
         buttons = [
@@ -42,6 +43,31 @@ class MainApp(App):
         main_layout.add_widget(equals_button)
 
         return main_layout
+    
+    def on_button_press(self, instance):
+        current = self.solution.text
+        button_text = instance.text
+
+        if button_text == 'C':
+            self.solution.text = ""
+        else:
+            if current and (
+                self.was_last_operator and button_text in self.operators):
+                return
+            elif current == "" and button_text in self.operators:
+                return
+            else:
+                new_text = current + button_text
+                self.solution.text = new_text
+        self.last_button = button_text
+        self.was_last_operator = self.last_button in self.operators
+
+    def on_solution(self, instance):
+        text = self.solution.text
+        if text:
+            solution = str(eval(self.solution.text))
+            self.solution.text = solution
+
 
 
 if __name__ == "__main__":
