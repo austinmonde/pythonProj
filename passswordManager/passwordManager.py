@@ -25,7 +25,7 @@ fer = Fernet(key)
 
 #this function will only read the password.txt file
 def view():
-    with open('password.txt', 'r') as f: #f is the name of the file
+    with open('passwordManager/password.txt', 'r') as f: #f is the name of the file
         for line in f.readlines():
             data = line.strip()
             user, passw = data.split("|")
