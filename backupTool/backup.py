@@ -5,8 +5,9 @@ import schedule
 import time
 
 
-source_dir = "C:\\Users\\Nehan\\OneDrive\\Pictures\\Screenshots"
-destination_dir = "D:\\austinWork\\backup"
+source_dir = input("Please enter your source path: ")
+destination_dir = input("Enter the path of where to backup: ")
+
 
 def copy_folder_to_directory(source, dest):
     today = datetime.date.today() 
@@ -21,7 +22,7 @@ def copy_folder_to_directory(source, dest):
 def l():
     copy_folder_to_directory(source_dir, destination_dir)
     
-schedule.every().day.at("23:58").do(l)
+schedule.every().day.at("00:17").do(l)
 
 while True:
     schedule.run_pending()
