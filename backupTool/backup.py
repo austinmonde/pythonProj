@@ -22,7 +22,7 @@ def copy_folder_to_directory(source, dest):
 def l():
     copy_folder_to_directory(source_dir, destination_dir)
     
-schedule.every().day.at("00:17").do(l)
+schedule.every().day.at("00:00").do(l)
 
 while True:
     schedule.run_pending()
